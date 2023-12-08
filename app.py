@@ -50,7 +50,7 @@ def patch_student(id: int):
         return make_response(jsonify({"error": f"application threw error: {e}"}), 405)
 
 
-# helper for checking course existence
+
 
 
 @app.patch("/courses/<int:id>")
@@ -60,8 +60,8 @@ def patch_course(id: int):
         return make_response(jsonify({"error": f"course id {id} not found"}), 404)
     try:
         course_patch:dict = request.get_json()
+
         for key in course_patch:
-            # setattr(course, "title", "patched_key")
             setattr(course, key, course_patch[key])
 
         db.session.add(course)
