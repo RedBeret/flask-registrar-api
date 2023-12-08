@@ -23,7 +23,7 @@ This is a simplified API for a university regristrar. The database models are co
   - Student
     - `grad_year` must be current year or later
   - Enrollment
-    - `term` must start with 
+    - `term` must start with 'S' or 'F' and end in an integer
   - Course
     - `title` must not be empty
 ## Routes
